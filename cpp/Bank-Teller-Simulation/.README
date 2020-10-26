@@ -9,3 +9,6 @@ cust2_arrival_time cust2_transaction_time
 Customer information can be entered in any order.
 Info can be entered at the terminal one at a time, or read in from a file containing all customer info.
 Several files of example data are included (e.g., 'simulationShuffled1.in').
+
+
+To run program, create executable 'sApp' using Makefile command 'make'.
