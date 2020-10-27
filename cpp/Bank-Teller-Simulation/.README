@@ -11,4 +11,4 @@ Info can be entered at the terminal one at a time, or read in from a file contai
 Several files of example data are included (e.g., 'simulationShuffled1.in').
 
 
-To run program, create executable 'sApp' using Makefile command 'make'.
+To run program, navigate to project folder in terminal and enter command 'make' to create executable 'sApp' using Makefile.
