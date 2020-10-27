@@ -1,0 +1,12 @@
+stop:arrêtez
+food:aliments
+conduit:conduit
+today:aujourd'hui
+face:visage
+laser:laser
+roof:toit
+take:prendre
+water:eau
+angle:angle
+win:gagner
+granddaughter:petite fille
