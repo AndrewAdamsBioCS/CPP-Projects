@@ -3,5 +3,7 @@ The user enters an English word at the terminal, it is searched for in the dicti
 
 The translation dictionary is stored in 'dataFile.txt'; for this project, a small sample of English-to-French translations is used.
 
+This was a class project for CMPT 225 at Simon Fraser University, Summer 2017. The focus of this project was to explore a link-based implementation of the Binary Search Tree (BST) abstract data type. Some starter code (e.g., function declarations without implementation) was provided by course instructor (Anne Lavergne).
+
 
 To run program, navigate to project folder in terminal and enter command 'make' to create executable 'tApp' using Makefile.
