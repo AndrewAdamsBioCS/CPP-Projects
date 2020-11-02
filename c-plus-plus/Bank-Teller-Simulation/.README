@@ -1,4 +1,4 @@
-Description: A simulation of customers being served at a bank.
+Description: A simulation of customers being served at a bank by a single teller.
 The simulation calculates average time spent waiting in line for all customers.
 
 For input, the simulation takes customer information in the following format:
@@ -9,6 +9,8 @@ cust2_arrival_time cust2_transaction_time
 Customer information can be entered in any order.
 Info can be entered at the terminal one at a time, or read in from a file containing all customer info.
 Several files of example data are included (e.g., 'simulationShuffled1.in').
+
+This was a class project for CMPT 225 at Simon Fraser University, Summer 2017. The focus of this project was to explore event processing using queue / priority queue abstract data types, as well as the creation of custom abstract data types to store information for customer arrival events.
 
 
 To run program, navigate to project folder in terminal and enter command 'make' to create executable 'sApp' using Makefile.

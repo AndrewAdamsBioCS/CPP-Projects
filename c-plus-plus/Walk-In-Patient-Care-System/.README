@@ -1,4 +1,7 @@
 Description: Terminal-based user interface for a walk-in clinic patient system.
 Displays several menus that user can navigate to add, remove, and update Patients in the clinic.
 
+This was a class project for CMPT 225 at Simon Fraser University, Summer 2017. The focus of this project was the creation of custom abstract data types to store patient information for efficient retrieval.
+
+
 To run program, create executable 'WICPS' using Makefile command 'make'.
