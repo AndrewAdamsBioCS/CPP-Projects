@@ -1,7 +1,7 @@
 import random
 import copy
 import time
-import Queue
+import queue
 from collections import deque
 
 
@@ -84,8 +84,9 @@ def scramble(puzzle):
 def print_puzzle(puzzle):
     for i in range(0, len(puzzle)):
         for j in range(0, len(puzzle[i])):
-            print puzzle[i][j],
-        print
+            print( puzzle[i][j], end=""),
+        print()
+    print()
 
 
 # Returns true if puzzle state is clear of all 1's
@@ -136,7 +137,6 @@ def breadth_first(puzzle):
         if left_child.state not in explored and not any(x.state == left_child.state for x in frontier):
             if is_solved(left_child.state):
                 search_done = True
-                print "Search steps performed: ", search_steps
                 # Add search steps to list of moves so it can be returned
                 left_child.moves_performed.append(search_steps)
             # If left child is not solution, and if end of puzzle has not been reached,
@@ -191,7 +191,6 @@ def depth_first(puzzle):
         if left_child.state not in explored and not any(x.state == left_child.state for x in frontier):
             if is_solved(left_child.state):
                 search_done = True
-                print "Search steps performed: ", search_steps
                 # Add search steps to list of moves so it can be returned
                 left_child.moves_performed.append(search_steps)
             # If left child is not solution, and if end of puzzle has not been reached,
@@ -251,7 +250,6 @@ def a_star(puzzle):
         if left_child.state not in explored and not any(x.state == left_child.state for x in frontier):
             if is_solved(left_child.state):
                 search_done = True
-                print "Search steps performed: ", search_steps
                 # Add search steps to list of moves so it can be returned
                 left_child.moves_performed.append(search_steps)
             # If left child is not solution, and if end of puzzle has not been reached,
@@ -286,57 +284,57 @@ def main():
     # for use in next_cell method (so that method can know the puzzle's size)
     global puzzle_rows
     global puzzle_columns
-    hundred_puzzles = []
+    puzzle_set = []
     total_moves = 0
     total_steps = 0
     total_time = 0
+    num_puzzles = 100
     # Create and scramble 100 puzzles and add to list of 100 puzzles
-    for i in range(0,100):
+    for i in range(0,num_puzzles):
         puzzle = scramble(create_puzzle(4,4))
-        hundred_puzzles.append(puzzle)
+        puzzle_set.append(puzzle)
     # Perform depth-first search and report statistics;
     # returned list will contain solution moves, plus
     # two additional values on end (total steps and total time)
-    print "Performing depth-first search on 100 puzzles"
-    for i in range(0,100):
-        solved = depth_first(hundred_puzzles[i])
+    print( "Performing depth-first search on 100 puzzles")
+    for i in range(0,num_puzzles):
+        solved = depth_first(puzzle_set[i])
         total_moves += len(solved) - 2
         total_steps += solved[len(solved) - 2]
         total_time += solved[len(solved) - 1]
-    print "Total moves: ", total_moves
-    print "Total search steps: ", total_steps
-    print "Total time: ", total_time
+    print( "Total moves: ", total_moves)
+    print( "Total search steps: ", total_steps)
+    print( "Total time: ", total_time)
     # Perform breadth-first search and report statistics;
     # returned list will contain solution moves, plus
     # two additional values on end (total steps and total time)
     total_moves = 0
     total_steps = 0
     total_time = 0
-    print "Performing breadth-first search on 100 puzzles"
-    for i in range(0, 100):
-        solved = breadth_first(hundred_puzzles[i])
+    print( "Performing breadth-first search on 100 puzzles")
+    for i in range(0, num_puzzles):
+        solved = breadth_first(puzzle_set[i])
         total_moves += len(solved) - 2
         total_steps += solved[len(solved) - 2]
         total_time += solved[len(solved) - 1]
-    print "Total moves: ", total_moves
-    print "Total search steps: ", total_steps
-    print "Total time: ", total_time
+    print( "Total moves: ", total_moves)
+    print( "Total search steps: ", total_steps)
+    print( "Total time: ", total_time)
     # Perform A* search and report statistics;
     # returned list will contain solution moves, plus
     # two additional values on end (total steps and total time)
     total_moves = 0
     total_steps = 0
     total_time = 0
-    print "Performing A* search on 100 puzzles"
-    for i in range(0, 100):
-        solved = a_star(hundred_puzzles[i])
+    print( "Performing A* search on 100 puzzles")
+    for i in range(0, num_puzzles):
+        solved = a_star(puzzle_set[i])
         total_moves += len(solved) - 2
         total_steps += solved[len(solved) - 2]
         total_time += solved[len(solved) - 1]
-    print "Total moves: ", total_moves
-    print "Total search steps: ", total_steps
-    print "Total time: ", total_time
-
+    print( "Total moves: ", total_moves)
+    print( "Total search steps: ", total_steps)
+    print( "Total time: ", total_time)
 
 puzzle_rows = 4
 puzzle_columns = 4
